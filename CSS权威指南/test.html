@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <script src="three.min.js"></script>
+  <script src="gio.min.js"></script>
 </head>
 
 <body>
@@ -14,6 +16,7 @@
     <a href="#">siteb</a>
     <a href="#">sitec</a>
   </nav>
+  <div id="globeArea" style="width: 200px; height: 200px"></div>
   <div class="none">
     beijingtiananmen si jkjklkksadjlsadla sjdsjak skjdk[ ]sss  sss aevd  
   </div>
@@ -68,5 +71,12 @@
 
 
 </style>
+
+<script>
+  var container = document.getElementById( "globalArea" );
+  var controller = new GIO.Controller( container );
+  controller.addData( data );
+  controller.init();
+</script>
 
 </html>
