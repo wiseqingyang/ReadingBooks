@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Animation</title>
+    <style>
+        body {
+            background-color: blueviolet;
+        }
+
+        .demo-container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 300px;
+            height: 400px;
+            margin-left: -150px;
+            margin-top: -200px;
+            background-color: white;
+            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            margin-left: 35px;
+            margin-top: 200px;
+        }
+
+        .btns-list {
+            width: 100%;
+            margin-top: 17px;
+        }
+
+        .btn {
+            width: 100%;
+            font-size: 22px;
+            text-align: center;
+            line-height: 50px;
+            border-top: 1px solid #ddd;
+        }
+
+        .highlited {
+            position: absolute;
+            z-index: 1;
+            width: 310px;
+            height: 50px;
+            background-color: royalblue;
+            margin-left: -5px;
+            top: 248px;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: transform 0.5s ease-in;
+        }
+
+        .hover_title {
+            color: white;
+            border-top: 1px solid transparent;
+        }
+
+        .hover-view {
+            transform: translateY(0);
+            transition: transform 0.5s ease-in;
+        }
+
+        .btn1:hover ~ .highlited {
+            transform: translateY(0);
+        }
+        
+        .btn2:hover ~ .highlited {
+            transform: translateY(51px);
+        }
+
+        .btn3:hover ~ .highlited {
+            transform: translateY(102px);
+        }
+
+        .btn1:hover ~ .highlited .hover-view {
+            transform: translateY(0);
+        }
+        
+        .btn2:hover ~ .highlited .hover-view {
+            transform: translateY(-51px);
+        }
+
+        .btn3:hover ~ .highlited .hover-view {
+            transform: translateY(-102px);
+        }
+        
+        .btn_hover {
+            z-index: 2;
+            position: absolute;
+            top: 248px;
+            height: 51px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn1 {
+            top: 248px;
+        }
+        .btn2 {
+            top: 299px;
+        }
+        .btn3 {
+            top: 350px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="demo-container">
+        <h2>想要什么？</h2>
+        <div class="btns-list">
+            <div class="btn btn1">咖啡</div>
+            <div class="btn btn2">奶茶</div>
+            <div class="btn btn3">牛奶</div>
+            <!-- 多加下面这些div 是因为是需要按钮在最上层，不然高亮层上来会失焦 -->
+            <div class="btn_hover btn1"></div>
+            <div class="btn_hover btn2"></div>
+            <div class="btn_hover btn3"></div>
+            <div class="highlited">
+                <div class="hover-view">
+                    <div class="btn hover_title">咖啡</div>
+                    <div class="btn hover_title">奶茶</div>
+                    <div class="btn hover_title">牛奶</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
